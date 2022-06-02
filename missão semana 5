@@ -1,0 +1,117 @@
+algoritmo "missao semana 5"
+
+var
+opcaoMenu:literal
+valorConversao:vetor [1..4] de real
+horaConversao:vetor [1..4] de real
+i:inteiro
+
+
+procedimento mostrarMenu()
+
+inicio
+escreval("1 - celsius")
+escreval("2 - fahrenheit")
+escreval("3 - pesquisar")
+leia(opcaoMenu)
+fimprocedimento
+
+
+procedimento fahrenheit()
+var
+i:inteiro
+j:real
+inicio
+
+para i de 1 ate 4 faca
+   escreval ("informe o valor da conversao  ")
+   leia(valorConversao[i])
+   escreval ("informe a hora ")
+   leia(horaConversao[i])
+fimpara
+
+
+fimprocedimento
+
+procedimento celsius()
+var
+i:inteiro
+j:real
+inicio
+para i de 1 ate 4 faca
+   escreval ("informe o valor da conversao  ")
+   leia(valorConversao[i])
+   escreval ("informe a hora ")
+   leia(horaConversao[i])
+fimpara
+
+fimprocedimento
+
+procedimento pesquisar()
+var
+i: inteiro
+nomePesquisar: real
+indiceSucesso : inteiro
+inicio
+
+escreval("informe  a temperatura pesquisar")
+leia(nomePesquisar)
+indiceSucesso <- -1
+para i de 1 ate 4 faca
+   se valorConversao[i] = nomePesquisar entao
+      indiceSucesso <- i
+      escreval("encontrado na posicao",indiceSucesso)
+      interrompa
+   fimse
+fimpara
+se indiceSucesso = -1 entao
+   escreval("nao encontrado")
+senao ("cliente encontrado na posicao " , indiceSucesso)
+fimse
+
+fimprocedimento
+
+
+inicio
+
+repita
+   mostrarMenu()
+   escolha opcaoMenu
+
+   caso "1"
+      celsius()
+   caso "2"
+      fahrenheit()
+   caso "3"
+      pesquisar()
+
+   outrocaso
+      escreval("opcao invalida")
+   fimescolha
+
+ate opcaoMenu = "4"
+
+
+  escreva("Os números em ordem decrescente sao:")
+Para i de 1 ate 4 faca
+   escreva(valorConversao[i])
+   se i = 4 entao
+   escreval(".")
+   senao
+   escreva(",")
+   fimse
+fimpara
+
+escreva("Os números em ordem decrescente sao:")
+Para i de 1 ate 4 faca
+   escreva(horaConversao[i])
+   se i = 4 entao
+   escreva(".")
+   senao
+   escreva(",")
+   fimse
+fimpara
+
+
+
+fimalgoritmo
