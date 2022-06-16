@@ -1,0 +1,59 @@
+package missaosemana7;
+
+
+public class Empregado {
+    String primeiroNome;
+    String sobrenome;
+    float salarioMensal;
+    float salarioAnual;
+    float porcetagem;
+    
+    
+    public Empregado(String primeiroNome, String sobrenome, float salarioMensal) {
+        this.primeiroNome = primeiroNome;
+        this.sobrenome = sobrenome;
+        this.salarioMensal = salarioMensal;
+        
+        
+    }
+    
+    public float getEmpregadoAnual(){
+      return salarioAnual = salarioMensal * 12; 
+    }
+    
+    public float getEmpregadoPorcetagem(){
+      return porcetagem = (salarioAnual / 10) + salarioAnual;
+      
+    }
+
+    public String getPrimeiroNome() {
+        return primeiroNome;
+    }
+
+    public void setPrimeiroNome(String primeiroNome) {
+        this.primeiroNome = primeiroNome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public float getSalarioMensal() {
+        return salarioMensal;
+    }
+
+    public void setSalarioMensal(float salarioMensal) {
+        if (salarioMensal < 0) {
+            this.salarioMensal = 0;
+
+        } else {
+            this.salarioMensal = salarioMensal;
+        }
+    }
+    
+    
+}
