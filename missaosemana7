@@ -1,0 +1,19 @@
+package missaosemana7;
+
+
+public class Missaosemana7 {
+
+    
+    public static void main(String[] args) {
+        
+        Empregado joao = new Empregado ("Joao","Silva",1000);
+        Empregado eduardo = new Empregado ("Eduardo","Martins",5000);
+        
+         System.out.println("o salrio anual e: " + joao.getEmpregadoAnual());
+         System.out.println("o salrio anual e: " + eduardo.getEmpregadoAnual());
+         
+         System.out.println("o salrio anual com porcetagem e: " + joao.getEmpregadoPorcetagem());
+         System.out.println("o salrio anual com porcetegem e: " + eduardo.getEmpregadoPorcetagem());
+    }
+    
+}
