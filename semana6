@@ -1,0 +1,76 @@
+package missaosemana6;
+
+import java.util.Scanner;
+
+public class Missaosemana6 {
+
+    public static void main(String[] args) {
+
+        Scanner entrada = new Scanner(System.in);
+        Scanner entradaTemp = new Scanner(System.in);
+
+        char menu = 'S';
+        double cotacaoDolar;
+        double valorDolar;
+        double valorReal;
+        float celsius;
+        float fahrenheit;
+        int opcao = 0;
+
+        while (menu == 'S' || menu == 's') {
+            
+            System.out.println("Digite 1 para converter dolar para real");
+            System.out.println("Digite 2 para converter de real para dolar");
+            System.out.println("Digite 3 para converter celsius para fahrenheit ");
+            System.out.println("Digite 4 para converter de fahrenheit para celsius");
+            
+            opcao = entrada.nextInt();
+
+            switch (opcao) {
+
+                case 1: {
+                    System.out.println("informe a cotacao do dolar");
+                    cotacaoDolar = entrada.nextDouble();
+
+                    System.out.println("informe o valor em dolar");
+                    valorDolar = entrada.nextDouble();
+
+                    valorReal = valorDolar * cotacaoDolar;
+                    System.out.println("o valor em reais:" + valorReal);
+                    break;
+                }
+                case 2: {
+                    System.out.println("informe a cotacao do dolar");
+                    cotacaoDolar = entrada.nextDouble();
+
+                    System.out.println("informe o valor em real");
+                    valorReal = entrada.nextDouble();
+
+                    valorDolar = valorReal / cotacaoDolar;
+                    System.out.println("o valor em dolar e:" + valorDolar);
+                    break;
+                }
+               
+               case 3: {
+                  System.out.println("informe a temperatura em celsius");
+                  celsius = entradaTemp.nextFloat();
+                  System.out.println(" a temperatura em fahrenheit e:"+((9*celsius + 160)/5) );
+                   break;
+               }
+       
+               default: {
+                    System.out.println("informe a temperatura em celsius");
+                   fahrenheit = entradaTemp.nextFloat();
+                  System.out.println(" a temperatura em celsius e:"+((fahrenheit - 36)/1.8) );
+                   break;
+               }
+                
+            }
+            System.out.println("Deseja continuar? S ou N");
+            menu = entrada.next().charAt(0);
+
+        }
+
+    }
+
+}
